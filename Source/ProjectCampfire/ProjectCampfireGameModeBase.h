@@ -13,5 +13,7 @@ UCLASS()
 class PROJECTCAMPFIRE_API AProjectCampfireGameModeBase : public AGameModeBase
 {
 	GENERATED_BODY()
+
+	AProjectCampfireGameModeBase();
 	
 };

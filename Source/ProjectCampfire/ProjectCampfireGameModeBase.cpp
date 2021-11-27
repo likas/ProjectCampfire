@@ -3,3 +3,7 @@
 
 #include "ProjectCampfireGameModeBase.h"
 
+AProjectCampfireGameModeBase::AProjectCampfireGameModeBase() : Super()
+{
+	//DefaultPawnClass = 
+}
