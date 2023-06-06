@@ -3,6 +3,11 @@
 
 #include "Core/CampfireVRCharacter.h"
 
+void ACampfireVRCharacter::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& LifetimeProperties) const
+{
+	Super::GetLifetimeReplicatedProps(LifetimeProperties);
+}
+
 void ACampfireVRCharacter::MoveForward(float AxisInput)
 {
 	AddMovementInput(GetVRForwardVector(), AxisInput);
@@ -11,4 +16,9 @@ void ACampfireVRCharacter::MoveForward(float AxisInput)
 void ACampfireVRCharacter::MoveRight(float AxisInput)
 {
 	AddMovementInput(GetVRRightVector(), AxisInput);
+}
+
+void ACampfireVRCharacter::PossessedBy(AController* NewController)
+{
+	Super::PossessedBy(NewController);
 }

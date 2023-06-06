@@ -14,6 +14,9 @@ class PROJECTCAMPFIRE_API ACampfireVRCharacter : public AVRCharacter
 {
 	GENERATED_BODY()
 
+	virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>&) const override;
+
+	virtual void PossessedBy(AController* NewController) override;
 
 public:
 	
@@ -22,5 +25,5 @@ public:
 
 	UFUNCTION()
 	void MoveRight(float AxisInput);
-	
+
 };

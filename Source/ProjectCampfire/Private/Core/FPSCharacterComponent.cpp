@@ -2,6 +2,8 @@
 
 
 #include "Core/FPSCharacterComponent.h"
+#include "GripMotionControllerComponent.h"
+#include "VRCharacterMovementComponent.h"
 
 // Sets default values for this component's properties
 UFPSCharacterComponent::UFPSCharacterComponent()
@@ -109,7 +111,11 @@ void UFPSCharacterComponent::BeginPlay()
 	//Re-bind input settings:
 
 	APlayerController* OwnerPC = Cast<APlayerController>(OwnerCharacter->GetController());
-	if(!IsValid(OwnerPC)) return;
+	if(!IsValid(OwnerPC))
+	{
+		UE_LOG(LogTemp, Warning, TEXT("%s: No valid PlayerController exists for %s"), *GetName(), *OwnerCharacter->GetName());
+		return;
+	}
 	
 	FPSInput->BindAction("Jump", IE_Pressed, OwnerCharacter, &ACharacter::Jump);
 	FPSInput->BindAction("Jump", IE_Released, OwnerCharacter, &ACharacter::StopJumping);

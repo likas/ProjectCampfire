@@ -1,6 +1,6 @@
 {
 	"FileVersion": 3,
-	"EngineAssociation": "5.0",
+	"EngineAssociation": "5.2",
 	"Category": "",
 	"Description": "",
 	"Modules": [
@@ -16,12 +16,14 @@
 	],
 	"Plugins": [
 		{
-			"Name": "OpenVRExpansionPlugin",
-			"Enabled": true
-		},
-		{
 			"Name": "VRExpansionPlugin",
-			"Enabled": true
+			"Enabled": true,
+			"SupportedTargetPlatforms": [
+				"Win64",
+				"Linux",
+				"Android",
+				"HoloLens"
+			]
 		}
 	]
 }

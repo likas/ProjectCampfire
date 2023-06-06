@@ -10,5 +10,6 @@ public class ProjectCampfireEditorTarget : TargetRules
 		Type = TargetType.Editor;
 		DefaultBuildSettings = BuildSettingsVersion.V2;
 		ExtraModuleNames.AddRange( new string[] { "ProjectCampfire" } );
+		IncludeOrderVersion = EngineIncludeOrderVersion.Latest;
 	}
 }
